@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --primary-color: #0b0b0b;
+    --secondary-color: #0099ff;
+    --text-color: #fff;
+}
+
+
+body {
+  background-color: var(--primary-color);
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  color: var(--text-color);
+
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.circle {
+  position: absolute;
+  width: 1.5px;
+  height: 1.5px;
+  border-radius: 50%;
+  background-color: var( --secondary-color);
+  animation: float linear infinite;
+  z-index: -1;
+}
+
+@keyframes float {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(var(--dx), var(--dy)); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes floatPulse {
+  0% {
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 4px var(--secondary-color),
+                0 0 8px var(--secondary-color),
+                0 0 12px var(--secondary-color);
+  }
+  50% {
+    transform: translate(-50%, -65%);
+    box-shadow: 0 0 12px var(--secondary-color),
+                0 0 20px var(--secondary-color),
+                0 0 28px var(--secondary-color);
+  }
+  100% {
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 4px var(--secondary-color),
+                0 0 8px var(--secondary-color),
+                0 0 12px var(--secondary-color);
+  }
+}
+
