@@ -8,12 +8,15 @@ function createCircle() {
 
     document.querySelectorAll('.circle').forEach(el => el.remove());
 
+    const pageWidth = document.body.scrollWidth;
+    const pageHeight = document.body.scrollHeight;
+
     for (let i = 0; i < numCircles; i++) {
         const circle = document.createElement('div');
         circle.className = 'circle';
 
-        circle.style.top = Math.random() * window.innerHeight + 'px';
-        circle.style.left = Math.random() * window.innerWidth + 'px';
+        circle.style.top = Math.random() * pageHeight + 'px';
+        circle.style.left = Math.random() * pageWidth + 'px';
 
         const dx = (Math.random() - 0.5) * 300 + 'px';
         const dy = (Math.random() - 0.5) * 300 + 'px';

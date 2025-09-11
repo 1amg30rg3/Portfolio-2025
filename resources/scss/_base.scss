@@ -1,0 +1,59 @@
+@use 'variables.scss' as *;
+
+body {
+  background-color: $primary-color;
+  color: $text-color;
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.circle {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  background-color: $secondary-color;
+  animation: float linear infinite;
+  z-index: -1;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0);
+    box-shadow:
+      0 0 4px $secondary-color,
+      0 0 8px $secondary-color,
+      0 0 12px $secondary-color;
+  }
+  50% {
+    transform: translate(var(--dx), var(--dy));
+    box-shadow:
+      0 0 12px $secondary-color,
+      0 0 20px $secondary-color,
+      0 0 28px $secondary-color;
+  }
+}
+
+@keyframes floatPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 4px $secondary-color,
+      0 0 8px $secondary-color,
+      0 0 12px $secondary-color;
+  }
+  50% {
+    box-shadow:
+      0 0 12px $secondary-color,
+      0 0 20px $secondary-color,
+      0 0 28px $secondary-color;
+  }
+}

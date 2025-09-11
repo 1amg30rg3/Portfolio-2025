@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Laravel Inertia</title>
     @routes
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/scss/app.scss', 'resources/js/app.js'])
     @inertiaHead
 </head>
 <body>
