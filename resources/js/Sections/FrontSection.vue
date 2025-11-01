@@ -3,13 +3,13 @@
 </style>
 
 <template>
-    <section class="knowledge">
+    <section class="knowledge cover-black" id="frontend">
         <div class="container">
             <section class="banner">
                 <h1 class="title">
                     FR<span>O</span>NTEND
                 </h1>
-                <img class="image" src="../../assets/designer.webp" alt="">
+                <img class="image" src="../../assets/frontend.webp" alt="">
             </section>
 
             <hr>
@@ -19,19 +19,41 @@
             </section>
 
             <section class="skills">
-                <h2 class="skills-title">Skills</h2>
+                <h2 class="title">SKILLS</h2>
                 <div class="skills-list-wrapper">
                     <ul class="skills-list">
-                        <li class="skill">VueJS</li>
-                        <li class="skill">Inertia JS</li>
-                        <li class="skill">Vite</li>
-                        <li class="skill">Sass</li>
-                        <li class="skill">CSS</li>
-                        <li class="skill">Animations</li>
-                        <li class="skill">JavaScript</li>
-                        <li class="skill">jQuery</li>
-                        <li class="skill">Bootstrap</li>
-                        <li class="skill">Tailwind</li>
+                        <li class="skill">
+                            <i class="fa-brands fa-vuejs"></i>
+                            VueJS
+                        </li>
+                        <li class="skill">
+                            <i class="fa-brands fa-js"></i>
+                            Inertia JS
+                        </li>
+                        <li class="skill">
+                            <i class="fa-solid fa-v"></i>
+                            Vite
+                        </li>
+                        <li class="skill">
+                            <i class="fa-brands fa-sass"></i>
+                            Sass
+                        </li>
+                        <li class="skill">
+                            <i class="fa-solid fa-atom"></i>
+                            Animations
+                        </li>
+                        <li class="skill">
+                            <i class="fa-brands fa-js"></i>
+                            JavaScript
+                        </li>
+                        <li class="skill">
+                            <i class="fa-brands fa-bootstrap"></i>
+                            Bootstrap
+                        </li>
+                        <li class="skill">
+                            <i class="fa-brands fa-css3"></i>
+                            Tailwind
+                        </li>
                     </ul>
                 </div>
             </section>

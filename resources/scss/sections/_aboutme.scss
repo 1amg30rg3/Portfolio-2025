@@ -1,0 +1,338 @@
+@use '../variables.scss' as *;
+
+.about-me {
+    padding: 100px 20px;
+    background: black;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 2px 0px,
+                rgba(0, 0, 0, 0.15) 0px 2px 6px 2px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(120px);
+    overflow-x: hidden;
+
+    .about-me-header {
+        text-align: center;
+        margin-bottom: 60px;
+        animation: fadeInUp 0.8s ease forwards;
+
+        .title {
+            position: relative;
+            display: inline-block;
+            font-size: 68px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 20px rgba(0, 153, 255, 0.3);
+
+            span {
+                position: relative;
+                color: $secondary-color;
+                font-size: 100px;
+                font-family: "Dancing Script", cursive;
+                filter: drop-shadow(0 0 10px rgba(0, 153, 255, 0.5));
+            }
+        }
+
+        .subtitle {
+            font-size: 24px;
+            color: $secondary-color;
+            font-weight: 600;
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+    }
+
+    .about-me-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+        margin-bottom: 60px;
+
+        .profile-image-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+
+            .profile-image {
+                width: 100%;
+                max-width: 400px;
+                height: auto;
+                aspect-ratio: 1 / 1;
+                border-radius: 20px;
+                object-fit: cover;
+                border: 3px solid $secondary-color;
+                box-shadow: 0 10px 40px rgba(0, 153, 255, 0.3);
+                transition: transform 0.5s ease, box-shadow 0.5s ease;
+
+                &:hover {
+                    transform: scale(1.05) rotate(2deg);
+                    box-shadow: 0 15px 60px rgba(0, 153, 255, 0.5);
+                }
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: calc(100% + 20px);
+                max-width: 420px;
+                height: calc(100% + 20px);
+                max-height: 420px;
+                aspect-ratio: 1 / 1;
+                border: 2px solid rgba(0, 153, 255, 0.3);
+                border-radius: 20px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) rotate(5deg);
+                z-index: -1;
+                animation: rotateFrame 10s linear infinite;
+            }
+        }
+
+        .about-text {
+            .intro-text {
+                font-size: 18px;
+                line-height: 1.8;
+                text-align: justify;
+                margin-bottom: 30px;
+                color: rgba(255, 255, 255, 0.9);
+
+                p {
+                    margin-bottom: 20px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            .highlight-box {
+                background: linear-gradient(135deg, rgba(0, 153, 255, 0.15) 0%, rgba(0, 153, 255, 0.05) 100%);
+                border-left: 4px solid $secondary-color;
+                padding: 25px;
+                border-radius: 12px;
+                margin-top: 30px;
+                border: 1px solid rgba(0, 102, 170, 0.3);
+                backdrop-filter: blur(10px);
+                transition: all 0.3s ease;
+
+                &:hover {
+                    background: linear-gradient(135deg, rgba(0, 153, 255, 0.2) 0%, rgba(0, 153, 255, 0.1) 100%);
+                    border-color: $secondary-color;
+                    box-shadow: 0 8px 25px rgba(0, 153, 255, 0.3);
+                }
+
+                .highlight-title {
+                    font-size: 22px;
+                    font-weight: 700;
+                    color: $secondary-color;
+                    margin-bottom: 12px;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    &::before {
+                        content: '💡';
+                        font-size: 24px;
+                    }
+                }
+
+                .highlight-text {
+                    font-size: 17px;
+                    line-height: 1.7;
+                    color: rgba(255, 255, 255, 0.9);
+                }
+            }
+        }
+    }
+
+    .experience-section {
+        margin-top: 80px;
+
+        .section-title {
+            text-align: center;
+            font-size: 40px;
+            font-weight: 800;
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            color: $text-color;
+
+            &::after {
+                content: '';
+                display: block;
+                width: 200px;
+                height: 4px;
+                margin: 12px auto 0;
+                background-color: $secondary-color;
+                border-radius: 2px;
+            }
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+
+            .experience-card {
+                background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+                border: 1px solid rgba(0, 102, 170, 0.26);
+                border-radius: 20px;
+                padding: 35px;
+                transition: all 0.4s ease;
+                position: relative;
+                overflow: hidden;
+                backdrop-filter: blur(10px);
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: -100%;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(90deg, transparent, rgba(0, 153, 255, 0.15), transparent);
+                    transition: left 0.6s ease;
+                }
+
+                &:hover {
+                    transform: translateY(-12px);
+                    border-color: $secondary-color;
+                    box-shadow: 0 15px 40px rgba(0, 153, 255, 0.4);
+
+                    &::before {
+                        left: 100%;
+                    }
+
+                    .card-icon {
+                        transform: scale(1.2) rotate(10deg);
+                    }
+                }
+
+                .card-icon {
+                    font-size: 45px;
+                    color: $secondary-color;
+                    margin-bottom: 20px;
+                    transition: transform 0.3s ease;
+                    filter: drop-shadow(0 0 10px rgba(0, 153, 255, 0.5));
+                }
+
+                .card-title {
+                    font-size: 26px;
+                    font-weight: 700;
+                    margin-bottom: 10px;
+                    color: $text-color;
+                }
+
+                .card-subtitle {
+                    font-size: 17px;
+                    color: $secondary-color;
+                    margin-bottom: 15px;
+                    font-weight: 600;
+                }
+
+                .card-description {
+                    font-size: 16px;
+                    line-height: 1.7;
+                    color: rgba(255, 255, 255, 0.85);
+                }
+            }
+        }
+    }
+
+    hr {
+        position: relative;
+        height: 2px;
+        background: linear-gradient(90deg, transparent 0%, $secondary-color 50%, transparent 100%);
+        border: none;
+        margin: 60px 0;
+
+        &::before {
+            content: "";
+            display: block;
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: $secondary-color;
+            border-radius: 50%;
+            animation: floatPulse 3s ease-in-out infinite;
+        }
+    }
+}
+
+@keyframes rotateFrame {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes floatPulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow: 0 0 10px $secondary-color;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.3);
+        box-shadow: 0 0 20px $secondary-color;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-me {
+        padding: 60px 20px;
+
+        .about-me-header {
+            .title {
+                font-size: 48px;
+
+                span {
+                    font-size: 70px;
+                }
+            }
+
+            .subtitle {
+                font-size: 18px;
+            }
+        }
+
+        .about-me-content {
+            grid-template-columns: 1fr;
+            gap: 40px;
+
+            .profile-image-wrapper {
+                .profile-image {
+                    width: 280px;
+                    height: 280px;
+                }
+
+                &::before {
+                    width: 300px;
+                    height: 300px;
+                }
+            }
+
+            .about-text {
+                .intro-text {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .experience-section {
+            .section-title {
+                font-size: 32px;
+            }
+
+            .experience-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+}
+
