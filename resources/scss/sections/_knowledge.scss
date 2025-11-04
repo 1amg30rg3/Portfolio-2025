@@ -28,6 +28,10 @@
                 font-family: "Dancing Script", cursive;
                 filter: drop-shadow(0 0 10px rgba(0, 153, 255, 0.5));
             }
+
+            &::after {
+                display: none;
+            }
         }
         img {
             animation: animateImg 5s infinite;
@@ -39,29 +43,6 @@
             &.backend-img{
                 max-width: 300px;
             }
-        }
-    }
-
-    hr {
-        position: relative;
-        height: 1px;
-        background-color: rgba(255, 255, 255, 0.2);
-        border: none;
-        margin: 40px 0;
-
-        &::before {
-            content: "";
-            display: block;
-            height: 30px;
-            width: 30px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: $secondary-color;
-            border-radius: 50%;
-            animation: floatPulse 3s ease-in-out infinite;
-            box-shadow: 0 0 20px rgba(0, 153, 255, 0.6);
         }
     }
 
@@ -88,17 +69,6 @@
             position: relative;
             display: inline-block;
             color: $text-color;
-
-            &::after {
-                content: '';
-                display: block;
-                width: 150px;
-                height: 4px;
-                margin: 12px auto 0;
-                background-color: $secondary-color;
-                border-radius: 2px;
-                animation: underlineGrow 1s ease forwards;
-            }
         }
 
         &-list-wrapper {
@@ -125,12 +95,12 @@
             gap: 8px;
 
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
-            padding: 20px;
+            padding: 16px 8px;
             border-radius: 16px;
             font-weight: 600;
-            font-size: 16px;
+            font-size: 18px;
             text-align: center;
-            color: $text-color;
+            color: $secondary-color;
             cursor: pointer;
             position: relative;
             overflow: hidden;
@@ -140,7 +110,8 @@
             backdrop-filter: blur(10px);
 
             i {
-                font-size: 20px;
+                font-size: 26px;
+                color: $secondary-color;
                 transition: transform 0.3s ease;
             }
 
@@ -153,23 +124,8 @@
 
                 i {
                     transform: scale(1.2) rotate(5deg);
+                    color: $primary-color;
                 }
-            }
-
-            &::before {
-                content: '';
-                position: absolute;
-                top: 50%;
-                left: -100%;
-                width: 100%;
-                height: 100%;
-                background: rgba(255, 255, 255, 0.15);
-                transform: skewX(-20deg);
-                transition: all 0.5s ease;
-            }
-
-            &:hover::before {
-                left: 100%;
             }
         }
     }
@@ -187,15 +143,6 @@
     }
 }
 
-@keyframes underlineGrow {
-    0% {
-        width: 0;
-    }
-    100% {
-        width: 60%;
-    }
-}
-
 @keyframes animateImg{
     0% {
         transform: translate(-30px, 0px);
@@ -206,14 +153,5 @@
     }
     100% {
         transform: translate(-30px, 0px);
-    }
-}
-
-@keyframes floatPulse {
-    0%, 100% {
-        width:30px;
-    }
-    50% {
-        width:130px;
     }
 }

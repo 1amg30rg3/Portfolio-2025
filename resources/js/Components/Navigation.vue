@@ -1,29 +1,6 @@
 <script setup>
     import { Link } from '@inertiajs/vue3';
-
-    const smoothScroll = (event, targetId) => {
-        event.preventDefault();
-        const element = document.querySelector(targetId);
-        if (element) {
-            const elementHeight = element.offsetHeight;
-            const screenHeight = window.innerHeight;
-            const elementPosition = element.getBoundingClientRect().top;
-
-            let offsetPosition;
-
-            if (screenHeight < elementHeight) {
-                offsetPosition = elementPosition + window.pageYOffset - 100;
-            } else {
-                const centerOffset = (screenHeight - elementHeight) / 2;
-                offsetPosition = elementPosition + window.pageYOffset - centerOffset;
-            }
-
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
-        }
-    };
+    import smoothScroll from '../Utils/scroll.js';
 </script>
 
 <style lang="scss" scoped>
@@ -38,42 +15,37 @@
             </div>
 
             <div class="links border-shadows">
-                <a href="#home" @click="smoothScroll($event, '#home')" class="n_item">
+                <a @click.prevent="smoothScroll('#home')" class="n_item">
                     <i class="fa-solid fa-house"></i>
                     Home
                 </a>
 
-                <a href="#aboutMe" @click="smoothScroll($event, '#aboutMe')" class="n_item">
+                <a @click.prevent="smoothScroll('#aboutMe')" class="n_item">
                     <i class="fa-brands fa-tidal"></i>
                     About Me
                 </a>
 
-                <a href="#frontend" @click="smoothScroll($event, '#frontend')" class="n_item">
-                    <i class="fa-brands fa-uikit"></i>
-                    Front End
-                </a>
-
-                <a href="#backend" @click="smoothScroll($event, '#backend')" class="n_item">
+                <a @click.prevent="smoothScroll('#backend')" class="n_item">
                     <i class="fa-solid fa-server"></i>
                     Back End
                 </a>
 
-                <a href="#projects" @click="smoothScroll($event, '#projects')" class="n_item">
+                <a @click.prevent="smoothScroll('#frontend')" class="n_item">
+                    <i class="fa-brands fa-uikit"></i>
+                    Front End
+                </a>
+
+                <a @click.prevent="smoothScroll('#projects')" class="n_item">
                     <i class="fa-solid fa-cubes"></i>
                     Projects
                 </a>
 
-                <a href="#contact" @click="smoothScroll($event, '#contact')" class="n_item">
+                <a @click.prevent="smoothScroll('#contact')" class="n_item">
                     <i class="fa-solid fa-signal"></i>
                     Contact
                 </a>
 
-                <Link :href="route('messages')" class="n_item">
-                    <i class="fa-solid fa-paper-plane"></i>
-                    Message
-                </Link>
-
-                <a href="#aboutApp" @click="smoothScroll($event, '#aboutApp')" class="n_item">
+                <a @click.prevent="smoothScroll('#aboutApp')" class="n_item">
                     <i class="fa-solid fa-puzzle-piece"></i>
                     About App
                 </a>

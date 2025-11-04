@@ -1,65 +1,16 @@
-<script setup>
-import Navigation from '@/Components/Navigation.vue';
+@use '../variables.scss' as *;
 
-const features = [
-    {
-        icon: 'fa-solid fa-code',
-        title: 'Modern Tech Stack',
-        description: 'Built with Laravel, Inertia.js, and Vue.js for a seamless single-page application experience.'
-    },
-    {
-        icon: 'fa-solid fa-palette',
-        title: 'Beautiful Design',
-        description: 'Crafted with SCSS and custom animations for a stunning visual experience.'
-    },
-    {
-        icon: 'fa-solid fa-mobile-screen',
-        title: 'Responsive Layout',
-        description: 'Fully responsive design that works perfectly on all devices and screen sizes.'
-    },
-    {
-        icon: 'fa-solid fa-bolt',
-        title: 'High Performance',
-        description: 'Optimized for speed with Vite bundling and efficient code splitting.'
-    },
-    {
-        icon: 'fa-solid fa-shield-halved',
-        title: 'Secure',
-        description: 'Built with security best practices and Laravel\'s robust security features.'
-    },
-    {
-        icon: 'fa-solid fa-puzzle-piece',
-        title: 'Modular Architecture',
-        description: 'Component-based structure for easy maintenance and scalability.'
-    }
-];
-
-const techStack = [
-    { name: 'Laravel', icon: 'fa-brands fa-laravel', category: 'Backend' },
-    { name: 'Vue.js', icon: 'fa-brands fa-vuejs', category: 'Frontend' },
-    { name: 'Inertia.js', icon: 'fa-solid fa-link', category: 'Framework' },
-    { name: 'SCSS', icon: 'fa-brands fa-sass', category: 'Styling' },
-    { name: 'Vite', icon: 'fa-solid fa-fire', category: 'Build Tool' },
-    { name: 'PHP', icon: 'fa-brands fa-php', category: 'Language' },
-    { name: 'JavaScript', icon: 'fa-brands fa-js', category: 'Language' },
-    { name: 'MySQL', icon: 'fa-solid fa-database', category: 'Database' }
-];
-</script>
-
-<style lang="scss" scoped>
-@use "../../scss/variables.scss" as *;
-
-.about-app-page {
-    min-height: 100vh;
-    padding: 120px 20px 80px;
+.about-app-section {
+    padding: 100px 20px;
     background-color: $primary-color;
+    overflow-x: hidden;
 
     .container {
         max-width: 1200px;
         margin: 0 auto;
     }
 
-    .page-header {
+    .section-header {
         text-align: center;
         margin-bottom: 60px;
         animation: fadeInUp 0.8s ease forwards;
@@ -108,7 +59,7 @@ const techStack = [
         }
     }
 
-    .section-title {
+    .subsection-title {
         font-size: 40px;
         font-weight: 800;
         text-align: center;
@@ -117,16 +68,6 @@ const techStack = [
         position: relative;
         display: inline-block;
         width: 100%;
-
-        &::after {
-            content: '';
-            display: block;
-            width: 150px;
-            height: 4px;
-            margin: 12px auto 0;
-            background-color: $secondary-color;
-            border-radius: 2px;
-        }
     }
 
     .features-grid {
@@ -180,7 +121,7 @@ const techStack = [
             }
 
             h3 {
-                font-size: 24px;
+                font-size: 18px;
                 font-weight: 700;
                 margin-bottom: 15px;
                 color: $text-color;
@@ -199,17 +140,18 @@ const techStack = [
 
         .tech-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 25px;
 
             .tech-item {
                 display: flex;
                 align-items: center;
+                justify-content: center !important;
                 gap: 15px;
                 background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
                 border: 1px solid rgba(0, 102, 170, 0.26);
                 border-radius: 16px;
-                padding: 20px;
+                padding: 16px 8px;
                 transition: all 0.4s ease;
                 backdrop-filter: blur(10px);
 
@@ -222,27 +164,35 @@ const techStack = [
 
                     i {
                         transform: scale(1.2) rotate(5deg);
+                        color: $primary-color;
+                    }
+
+                    .tech-name,
+                    .tech-category{
+                        color: $primary-color !important;
                     }
                 }
 
                 i {
-                    font-size: 32px;
+                    font-size: 26px;
                     color: $secondary-color;
                     transition: all 0.3s ease;
                 }
 
                 .tech-info {
-                    flex: 1;
-
                     .tech-name {
                         font-size: 18px;
                         font-weight: 700;
                         margin-bottom: 3px;
+                        color: $secondary-color;
+                        font-family: "Bitcount Grid Double", system-ui;
                     }
 
                     .tech-category {
-                        font-size: 13px;
+                        font-size: 12px;
                         opacity: 0.7;
+                        color: $secondary-color;
+                        font-family: "Bitcount Grid Double", system-ui;
                     }
                 }
             }
@@ -282,56 +232,3 @@ const techStack = [
         transform: translateY(0);
     }
 }
-</style>
-
-<template>
-    <Navigation />
-    <div class="about-app-page">
-        <div class="container">
-            <div class="page-header">
-                <h1 class="title">AB<span>O</span>UT APP</h1>
-                <p class="subtitle">Learn more about the technology and features behind this portfolio</p>
-            </div>
-
-            <div class="app-intro">
-                <p>
-                    This portfolio application is a modern, full-stack web application built with cutting-edge technologies.
-                    It showcases my skills and projects while demonstrating best practices in web development.
-                </p>
-                <p>
-                    The application leverages the power of Laravel for the backend, Vue.js for reactive frontend components,
-                    and Inertia.js to bridge them together, creating a seamless single-page application experience without
-                    the complexity of a traditional SPA.
-                </p>
-            </div>
-
-            <h2 class="section-title">Key Features</h2>
-            <div class="features-grid">
-                <div v-for="feature in features" :key="feature.title" class="feature-card">
-                    <i :class="feature.icon" class="icon"></i>
-                    <h3>{{ feature.title }}</h3>
-                    <p>{{ feature.description }}</p>
-                </div>
-            </div>
-
-            <div class="tech-stack-section">
-                <h2 class="section-title">Technology Stack</h2>
-                <div class="tech-grid">
-                    <div v-for="tech in techStack" :key="tech.name" class="tech-item">
-                        <i :class="tech.icon"></i>
-                        <div class="tech-info">
-                            <div class="tech-name">{{ tech.name }}</div>
-                            <div class="tech-category">{{ tech.category }}</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="version-info">
-                <div class="version">Version 2.0</div>
-                <div class="build-date">Built in 2025</div>
-            </div>
-        </div>
-    </div>
-</template>
-

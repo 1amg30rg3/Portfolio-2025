@@ -1,5 +1,8 @@
 <script setup>
     import ButtonComponent from '../Components/ButtonComponent.vue';
+    import smoothScroll from '../Utils/scroll.js';
+    import cvFile from '../../assets/Giorgi_Gavasheli_CV.pdf';
+    import myPicture from '../../assets/Giorgi_Gavasheli_CV.pdf';
 </script>
 
 
@@ -20,8 +23,11 @@
                         <h3>Engineer</h3>
 
                         <div class="buttons">
-                            <ButtonComponent label="Message Me"/>
-                            <ButtonComponent label="Open CV"/>
+                            <ButtonComponent label="Contact Me" @click="smoothScroll('#contact')"/>
+
+                            <a :href="cvFile" target="_blank" rel="noopener">
+                                <ButtonComponent label="Open CV"/>
+                            </a>
                         </div>
                     </div>
                     <div class="column">
