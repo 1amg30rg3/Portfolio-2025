@@ -1,4 +1,16 @@
 export default function smoothScroll(targetId) {
+    const body = document.body;
+    if (body.classList.contains('no-scroll')) {
+        body.classList.remove('no-scroll');
+        setTimeout(() => {
+            performScroll(targetId);
+        }, 50);
+    } else {
+        performScroll(targetId);
+    }
+}
+
+function performScroll(targetId) {
     const element = document.querySelector(targetId);
     if (element) {
         const elementHeight = element.offsetHeight;

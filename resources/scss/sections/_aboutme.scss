@@ -1,13 +1,11 @@
-@use '../variables.scss' as *;
+@use "../variables.scss" as *;
 
 .about-me {
-    padding: 100px 20px;
-    background: black;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 2px 0px,
-                rgba(0, 0, 0, 0.15) 0px 2px 6px 2px;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(120px);
-    overflow-x: hidden;
+    padding: 100px 0;
+
+    @media (max-width: 768px) {
+        padding: 60px 20px;
+    }
 
     .about-me-header {
         text-align: center;
@@ -22,12 +20,20 @@
             margin-bottom: 20px;
             text-shadow: 0 4px 20px rgba(0, 153, 255, 0.3);
 
+            @media (max-width: 768px) {
+                font-size: 48px;
+            }
+
             span {
                 position: relative;
                 color: $secondary-color;
                 font-size: 100px;
                 font-family: "Dancing Script", cursive;
                 filter: drop-shadow(0 0 10px rgba(0, 153, 255, 0.5));
+
+                @media (max-width: 768px) {
+                    font-size: 70px;
+                }
             }
         }
 
@@ -37,6 +43,10 @@
             font-weight: 600;
             margin-top: 10px;
             opacity: 0.9;
+
+            @media (max-width: 768px) {
+                font-size: 18px;
+            }
         }
     }
 
@@ -46,6 +56,15 @@
         gap: 60px;
         align-items: center;
         margin-bottom: 60px;
+
+        @media (max-width: 1000px) {
+            grid-template-columns: 1fr;
+            gap: 40px;
+
+            .profile-image-wrapper{
+                margin: 45px 0;
+            }
+        }
 
         .profile-image-wrapper {
             display: flex;
@@ -58,11 +77,17 @@
                 max-width: 400px;
                 height: auto;
                 aspect-ratio: 1 / 1;
-                border-radius: 20px;
                 object-fit: cover;
                 border: 3px solid $secondary-color;
                 box-shadow: 0 10px 40px rgba(0, 153, 255, 0.3);
-                transition: transform 0.5s ease, box-shadow 0.5s ease;
+                transition:
+                    transform 0.5s ease,
+                    box-shadow 0.5s ease;
+
+                @media (max-width: 768px) {
+                    width: 280px;
+                    height: 280px;
+                }
 
                 &:hover {
                     transform: scale(1.05) rotate(2deg);
@@ -71,7 +96,7 @@
             }
 
             &::before {
-                content: '';
+                content: "";
                 position: absolute;
                 width: calc(100% + 20px);
                 max-width: 420px;
@@ -79,12 +104,16 @@
                 max-height: 420px;
                 aspect-ratio: 1 / 1;
                 border: 2px solid rgba(0, 153, 255, 0.3);
-                border-radius: 20px;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%) rotate(5deg);
                 z-index: -1;
-                animation: rotateFrame 10s linear infinite;
+                animation: rotateFrame 60s linear infinite;
+
+                @media (max-width: 768px) {
+                    width: 300px;
+                    height: 300px;
+                }
             }
         }
 
@@ -96,6 +125,10 @@
                 margin-bottom: 30px;
                 color: rgba(255, 255, 255, 0.9);
 
+                @media (max-width: 768px) {
+                    font-size: 16px;
+                }
+
                 p {
                     margin-bottom: 20px;
 
@@ -106,17 +139,24 @@
             }
 
             .highlight-box {
-                background: linear-gradient(135deg, rgba(0, 153, 255, 0.15) 0%, rgba(0, 153, 255, 0.05) 100%);
+                background: linear-gradient(
+                    135deg,
+                    rgba(0, 153, 255, 0.15) 0%,
+                    rgba(0, 153, 255, 0.05) 100%
+                );
                 border-left: 4px solid $secondary-color;
                 padding: 25px;
-                border-radius: 12px;
                 margin-top: 30px;
                 border: 1px solid rgba(0, 102, 170, 0.3);
                 backdrop-filter: blur(10px);
                 transition: all 0.3s ease;
 
                 &:hover {
-                    background: linear-gradient(135deg, rgba(0, 153, 255, 0.2) 0%, rgba(0, 153, 255, 0.1) 100%);
+                    background: linear-gradient(
+                        135deg,
+                        rgba(0, 153, 255, 0.2) 0%,
+                        rgba(0, 153, 255, 0.1) 100%
+                    );
                     border-color: $secondary-color;
                     box-shadow: 0 8px 25px rgba(0, 153, 255, 0.3);
                 }
@@ -124,14 +164,14 @@
                 .highlight-title {
                     font-size: 22px;
                     font-weight: 700;
-                    color: $secondary-color;
+                    color: rgb(255, 191, 0);
                     margin-bottom: 12px;
                     display: flex;
                     align-items: center;
                     gap: 10px;
 
                     &::before {
-                        content: '💡';
+                        content: "💡";
                         font-size: 24px;
                     }
                 }
@@ -157,6 +197,10 @@
             display: inline-block;
             width: 100%;
             color: $text-color;
+
+            @media (max-width: 768px) {
+                font-size: 32px;
+            }
         }
 
         .experience-grid {
@@ -164,10 +208,17 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
 
+            @media (max-width: 768px) {
+                grid-template-columns: 1fr;
+            }
+
             .experience-card {
-                background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+                background: linear-gradient(
+                    135deg,
+                    rgba(255, 255, 255, 0.05) 0%,
+                    rgba(255, 255, 255, 0.02) 100%
+                );
                 border: 1px solid rgba(0, 102, 170, 0.26);
-                border-radius: 20px;
                 padding: 35px;
                 transition: all 0.4s ease;
                 position: relative;
@@ -175,13 +226,18 @@
                 backdrop-filter: blur(10px);
 
                 &::before {
-                    content: '';
+                    content: "";
                     position: absolute;
                     top: 0;
                     left: -100%;
                     width: 100%;
                     height: 100%;
-                    background: linear-gradient(90deg, transparent, rgba(0, 153, 255, 0.15), transparent);
+                    background: linear-gradient(
+                        90deg,
+                        transparent,
+                        rgba(0, 153, 255, 0.15),
+                        transparent
+                    );
                     transition: left 0.6s ease;
                 }
 
@@ -202,23 +258,26 @@
                 .card-icon {
                     font-size: 45px;
                     color: $secondary-color;
-                    margin-bottom: 20px;
                     transition: transform 0.3s ease;
                     filter: drop-shadow(0 0 10px rgba(0, 153, 255, 0.5));
                 }
 
                 .card-title {
-                    font-size: 26px;
+                    font-size: 28px;
                     font-weight: 700;
-                    margin-bottom: 10px;
+                    margin-bottom: 25px;
+                    margin-top: 15px;
                     color: $text-color;
+                    font-family: 'Zuume';
+                    letter-spacing: .5px;
                 }
 
                 .card-subtitle {
-                    font-size: 17px;
+                    font-size: 20px;
                     color: $secondary-color;
                     margin-bottom: 15px;
-                    font-weight: 600;
+                    font-family: 'Zuume';
+                    letter-spacing: .5px;
                 }
 
                 .card-description {
@@ -230,66 +289,3 @@
         }
     }
 }
-
-@keyframes rotateFrame {
-    0% {
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-    100% {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
-}
-
-@media (max-width: 768px) {
-    .about-me {
-        padding: 60px 20px;
-
-        .about-me-header {
-            .title {
-                font-size: 48px;
-
-                span {
-                    font-size: 70px;
-                }
-            }
-
-            .subtitle {
-                font-size: 18px;
-            }
-        }
-
-        .about-me-content {
-            grid-template-columns: 1fr;
-            gap: 40px;
-
-            .profile-image-wrapper {
-                .profile-image {
-                    width: 280px;
-                    height: 280px;
-                }
-
-                &::before {
-                    width: 300px;
-                    height: 300px;
-                }
-            }
-
-            .about-text {
-                .intro-text {
-                    font-size: 16px;
-                }
-            }
-        }
-
-        .experience-section {
-            .section-title {
-                font-size: 32px;
-            }
-
-            .experience-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    }
-}
-

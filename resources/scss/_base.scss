@@ -15,8 +15,6 @@ body {
     background-color: $primary-color;
     color: $text-color;
     margin: 0;
-    min-height: 100vh;
-    overflow-x: hidden;
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     user-select: none;
@@ -28,52 +26,12 @@ body {
 
 .circle {
     position: absolute;
-    width: 1px;
-    height: 1px;
+    width: 1.5px;
+    height: 1.5px;
     border-radius: 50%;
     background-color: $secondary-color;
     animation: float linear infinite;
     z-index: -1;
-}
-
-.container{
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 20px;
-    box-sizing: border-box;
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translate(0, 0);
-    box-shadow:
-      0 0 4px $secondary-color,
-      0 0 8px $secondary-color,
-      0 0 12px $secondary-color;
-  }
-  50% {
-    transform: translate(var(--dx), var(--dy));
-    box-shadow:
-      0 0 12px $secondary-color,
-      0 0 20px $secondary-color,
-      0 0 28px $secondary-color;
-  }
-}
-
-@keyframes floatPulse {
-  0%, 100% {
-    box-shadow:
-      0 0 4px $secondary-color,
-      0 0 8px $secondary-color,
-      0 0 12px $secondary-color;
-  }
-  50% {
-    box-shadow:
-      0 0 12px $secondary-color,
-      0 0 20px $secondary-color,
-      0 0 28px $secondary-color;
-  }
 }
 
 .title{
@@ -96,7 +54,7 @@ body {
 }
 
 .cover-black{
-    background: black;
+    background: radial-gradient(60% 60% at 30% 0,#041622,#000000);
     padding: 100px 0;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 2px 0px,
                 rgba(0, 0, 0, 0.15) 0px 2px 6px 2px;
@@ -155,4 +113,18 @@ hr {
         background-color: $secondary-color;
         border-radius: 50%;
     }
+}
+
+.container{
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.no-scroll {
+    overflow: hidden !important;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
 }

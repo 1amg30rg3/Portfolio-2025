@@ -1,14 +1,7 @@
-@use '../variables.scss' as *;
+@use "../variables.scss" as *;
 
 .about-app-section {
-    padding: 100px 20px;
-    background-color: $primary-color;
-    overflow-x: hidden;
-
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
+    padding: 100px 0;
 
     .section-header {
         text-align: center;
@@ -38,9 +31,12 @@
     }
 
     .app-intro {
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+        background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.05) 0%,
+            rgba(255, 255, 255, 0.02) 100%
+        );
         border: 1px solid rgba(0, 102, 170, 0.3);
-        border-radius: 20px;
         padding: 50px;
         backdrop-filter: blur(10px);
         margin-bottom: 60px;
@@ -62,6 +58,7 @@
     .subsection-title {
         font-size: 40px;
         font-weight: 800;
+        text-transform: uppercase;
         text-align: center;
         margin-bottom: 50px;
         color: $text-color;
@@ -77,9 +74,12 @@
         margin-bottom: 80px;
 
         .feature-card {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+            background: linear-gradient(
+                135deg,
+                rgba(255, 255, 255, 0.05) 0%,
+                rgba(255, 255, 255, 0.02) 100%
+            );
             border: 1px solid rgba(0, 102, 170, 0.26);
-            border-radius: 20px;
             padding: 35px;
             transition: all 0.4s ease;
             position: relative;
@@ -88,13 +88,18 @@
             animation: fadeInUp 1.2s ease forwards;
 
             &::before {
-                content: '';
+                content: "";
                 position: absolute;
                 top: 0;
                 left: -100%;
                 width: 100%;
                 height: 100%;
-                background: linear-gradient(90deg, transparent, rgba(0, 153, 255, 0.15), transparent);
+                background: linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(0, 153, 255, 0.15),
+                    transparent
+                );
                 transition: left 0.6s ease;
             }
 
@@ -121,10 +126,13 @@
             }
 
             h3 {
-                font-size: 18px;
+                font-size: 22px;
                 font-weight: 700;
-                margin-bottom: 15px;
+                margin-bottom: 25px;
+                margin-top: 10px;
                 color: $text-color;
+                font-family: 'Zuume';
+                letter-spacing: 1px;
             }
 
             p {
@@ -148,15 +156,22 @@
                 align-items: center;
                 justify-content: center !important;
                 gap: 15px;
-                background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+                background: linear-gradient(
+                    135deg,
+                    rgba(255, 255, 255, 0.05) 0%,
+                    rgba(255, 255, 255, 0.02) 100%
+                );
                 border: 1px solid rgba(0, 102, 170, 0.26);
-                border-radius: 16px;
                 padding: 16px 8px;
                 transition: all 0.4s ease;
                 backdrop-filter: blur(10px);
 
                 &:hover {
-                    background: linear-gradient(135deg, $secondary-color 0%, rgba(0, 153, 255, 0.8) 100%);
+                    background: linear-gradient(
+                        135deg,
+                        $secondary-color 0%,
+                        rgba(0, 153, 255, 0.8) 100%
+                    );
                     color: $primary-color;
                     transform: translateY(-8px) scale(1.05);
                     box-shadow: 0 12px 30px rgba(0, 153, 255, 0.5);
@@ -168,7 +183,7 @@
                     }
 
                     .tech-name,
-                    .tech-category{
+                    .tech-category {
                         color: $primary-color !important;
                     }
                 }
@@ -203,9 +218,12 @@
         margin-top: 80px;
         text-align: center;
         padding: 40px;
-        background: linear-gradient(135deg, rgba(0, 153, 255, 0.1) 0%, rgba(0, 153, 255, 0.05) 100%);
+        background: linear-gradient(
+            135deg,
+            rgba(0, 153, 255, 0.1) 0%,
+            rgba(0, 153, 255, 0.05) 100%
+        );
         border: 1px solid rgba(0, 102, 170, 0.3);
-        border-radius: 20px;
         backdrop-filter: blur(10px);
 
         .version {
@@ -219,16 +237,5 @@
             font-size: 16px;
             color: rgba(255, 255, 255, 0.6);
         }
-    }
-}
-
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
     }
 }

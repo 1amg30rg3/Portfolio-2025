@@ -18,7 +18,7 @@
                     <div class="column">
                         <h3>George</h3>
                         <h3>Gavasheli</h3>
-                        <div class="line-between"></div>
+                        <hr class="small">
                         <h3>Software</h3>
                         <h3>Engineer</h3>
 

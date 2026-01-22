@@ -1,54 +1,89 @@
 <script setup>
-    import { Link } from '@inertiajs/vue3';
+    import { ref, watch } from 'vue';
     import smoothScroll from '../Utils/scroll.js';
+
+    const showSmallDeviceLinks = ref(false);
+
+    watch(showSmallDeviceLinks, (newValue) => {
+        if (newValue) {
+            document.body.classList.add('no-scroll');
+        } else {
+            document.body.classList.remove('no-scroll');
+        }
+    });
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
     @use "../../scss/components/navigation.scss" as *;
 </style>
 
 <template>
-    <nav id="navigation" class="container">
-        <div class="nav-items">
-            <div class="logo-section border-shadows">
-                <svg class="logo" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" viewBox="0 0 170.89719 94.634346" version="1.1" id="svg8" sodipodi:docname="drawing.svg" inkscape:version="0.92.4 (5da689c313, 2019-01-14)"><g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1" transform="translate(-17.800097,-71.346035)"><g id="g6273" transform="translate(-29.934187,14.03165)"><g id="g6277" transform="matrix(3.4412489,0,0,3.4412489,-362.84189,-181.85241)"><path sodipodi:nodetypes="ccscccccscccccccc" inkscape:connector-curvature="0" id="path6100" d="m 119.70826,69.897005 0.0473,17.441642 c 0,0 0.85045,9.264394 11.29197,9.264394 10.44152,0 14.83548,-0.09453 14.83548,-0.09453 l -0.0472,-9.784334 -6.16442,-6.196371 -9.67176,0.0167 0.0334,3.292169 c 0,0 0.45101,1.938537 2.37199,1.955247 1.92099,0.01671 8.16838,0.01671 8.16838,0.01671 l 0.0668,5.49809 -10.99327,0.134818 c 0,0 -4.80894,-1.438326 -4.74212,-5.064728 0.0668,-3.6264 0.0334,-11.213431 0.0334,-11.213431 l 14.26542,0.06685 -0.0167,-5.330976 z"></path><path sodipodi:nodetypes="ccscccccscccccccc" inkscape:connector-curvature="0" id="path6100-8" d="m 168.57357,96.602995 -0.0473,-17.441639 c 0,0 -0.85044,-9.264398 -11.29196,-9.264398 -10.44153,0 -14.83547,0.09453 -14.83547,0.09453 l 0.0472,9.784331 6.16441,6.19637 9.67177,-0.01671 -0.0334,-3.292165 c 0,0 -0.45102,-1.938541 -2.372,-1.955249 -1.92099,-0.01671 -8.16839,-0.01671 -8.16839,-0.01671 l -0.0668,-5.498089 10.87447,0.0167 c 0,0 4.92776,1.286799 4.86094,4.913206 -0.0668,3.626396 -0.0334,11.213422 -0.0334,11.213422 l -14.26544,-0.06682 0.0167,5.33098 z"></path></g></g></g></svg>
-            </div>
+    <nav :class="['navigation', { 'show-small-device-links': showSmallDeviceLinks }]">
+        <div class="container">
+            <div class="nav-section">
+                <div class="nav-items">
+                    <div class="logo-section" v-if="!showSmallDeviceLinks">
+                        <svg class="logo" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" viewBox="0 0 170.89719 94.634346" version="1.1" id="svg8" sodipodi:docname="drawing.svg" inkscape:version="0.92.4 (5da689c313, 2019-01-14)"><g inkscape:name="Layer 1" inkscape:groupmode="layer" id="layer1" transform="translate(-17.800097,-71.346035)"><g id="g6273" transform="translate(-29.934187,14.03165)"><g id="g6277" transform="matrix(3.4412489,0,0,3.4412489,-362.84189,-181.85241)"><path sodipodi:nodetypes="ccscccccscccccccc" inkscape:connector-curvature="0" id="path6100" d="m 119.70826,69.897005 0.0473,17.441642 c 0,0 0.85045,9.264394 11.29197,9.264394 10.44152,0 14.83548,-0.09453 14.83548,-0.09453 l -0.0472,-9.784334 -6.16442,-6.196371 -9.67176,0.0167 0.0334,3.292169 c 0,0 0.45101,1.938537 2.37199,1.955247 1.92099,0.01671 8.16838,0.01671 8.16838,0.01671 l 0.0668,5.49809 -10.99327,0.134818 c 0,0 -4.80894,-1.438326 -4.74212,-5.064728 0.0668,-3.6264 0.0334,-11.213431 0.0334,-11.213431 l 14.26542,0.06685 -0.0167,-5.330976 z"></path><path sodipodi:nodetypes="ccscccccscccccccc" inkscape:connector-curvature="0" id="path6100-8" d="m 168.57357,96.602995 -0.0473,-17.441639 c 0,0 -0.85044,-9.264398 -11.29196,-9.264398 -10.44153,0 -14.83547,0.09453 -14.83547,0.09453 l 0.0472,9.784331 6.16441,6.19637 9.67177,-0.01671 -0.0334,-3.292165 c 0,0 -0.45102,-1.938541 -2.372,-1.955249 -1.92099,-0.01671 -8.16839,-0.01671 -8.16839,-0.01671 l -0.0668,-5.498089 10.87447,0.0167 c 0,0 4.92776,1.286799 4.86094,4.913206 -0.0668,3.626396 -0.0334,11.213422 -0.0334,11.213422 l -14.26544,-0.06682 0.0167,5.33098 z"></path></g></g></g></svg>
+                    </div>
+                    <div class="header" v-else>
+                        <div class="logo-section border-shadows">
+                            <svg class="logo" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" viewBox="0 0 170.89719 94.634346" version="1.1" id="svg8" sodipodi:docname="drawing.svg" inkscape:version="0.92.4 (5da689c313, 2019-01-14)"><g inkscape:name="Layer 1" inkscape:groupmode="layer" id="layer1" transform="translate(-17.800097,-71.346035)"><g id="g6273" transform="translate(-29.934187,14.03165)"><g id="g6277" transform="matrix(3.4412489,0,0,3.4412489,-362.84189,-181.85241)"><path sodipodi:nodetypes="ccscccccscccccccc" inkscape:connector-curvature="0" id="path6100" d="m 119.70826,69.897005 0.0473,17.441642 c 0,0 0.85045,9.264394 11.29197,9.264394 10.44152,0 14.83548,-0.09453 14.83548,-0.09453 l -0.0472,-9.784334 -6.16442,-6.196371 -9.67176,0.0167 0.0334,3.292169 c 0,0 0.45101,1.938537 2.37199,1.955247 1.92099,0.01671 8.16838,0.01671 8.16838,0.01671 l 0.0668,5.49809 -10.99327,0.134818 c 0,0 -4.80894,-1.438326 -4.74212,-5.064728 0.0668,-3.6264 0.0334,-11.213431 0.0334,-11.213431 l 14.26542,0.06685 -0.0167,-5.330976 z"></path><path sodipodi:nodetypes="ccscccccscccccccc" inkscape:connector-curvature="0" id="path6100-8" d="m 168.57357,96.602995 -0.0473,-17.441639 c 0,0 -0.85044,-9.264398 -11.29196,-9.264398 -10.44153,0 -14.83547,0.09453 -14.83547,0.09453 l 0.0472,9.784331 6.16441,6.19637 9.67177,-0.01671 -0.0334,-3.292165 c 0,0 -0.45102,-1.938541 -2.372,-1.955249 -1.92099,-0.01671 -8.16839,-0.01671 -8.16839,-0.01671 l -0.0668,-5.498089 10.87447,0.0167 c 0,0 4.92776,1.286799 4.86094,4.913206 -0.0668,3.626396 -0.0334,11.213422 -0.0334,11.213422 l -14.26544,-0.06682 0.0167,5.33098 z"></path></g></g></g></svg>
+                        </div>
 
-            <div class="links border-shadows">
-                <a @click.prevent="smoothScroll('#home')" class="n_item">
-                    <i class="fa-solid fa-house"></i>
-                    Home
-                </a>
+                        <div class="close" @click="showSmallDeviceLinks = false">
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                    </div>
 
-                <a @click.prevent="smoothScroll('#aboutMe')" class="n_item">
-                    <i class="fa-brands fa-tidal"></i>
-                    About Me
-                </a>
+                    <div class="links border-shadows">
+                        <a @click.prevent="smoothScroll('#home'); showSmallDeviceLinks = false" class="n_item" style="--delay: 0.1s">
+                            <i class="fa-solid fa-house"></i>
+                            <name>Home</name>
+                        </a>
 
-                <a @click.prevent="smoothScroll('#backend')" class="n_item">
-                    <i class="fa-solid fa-server"></i>
-                    Back End
-                </a>
+                        <a @click.prevent="smoothScroll('#aboutMe'); showSmallDeviceLinks = false" class="n_item" style="--delay: 0.2s">
+                            <i class="fa-brands fa-tidal"></i>
+                            <name>About Me</name>
+                        </a>
 
-                <a @click.prevent="smoothScroll('#frontend')" class="n_item">
-                    <i class="fa-brands fa-uikit"></i>
-                    Front End
-                </a>
+                        <a @click.prevent="smoothScroll('#backend'); showSmallDeviceLinks = false" class="n_item" style="--delay: 0.3s">
+                            <i class="fa-solid fa-server"></i>
+                            <name>Back End</name>
+                        </a>
 
-                <a @click.prevent="smoothScroll('#projects')" class="n_item">
-                    <i class="fa-solid fa-cubes"></i>
-                    Projects
-                </a>
+                        <a @click.prevent="smoothScroll('#frontend'); showSmallDeviceLinks = false" class="n_item" style="--delay: 0.4s">
+                            <i class="fa-brands fa-uikit"></i>
+                            <name>Front End</name>
+                        </a>
 
-                <a @click.prevent="smoothScroll('#contact')" class="n_item">
-                    <i class="fa-solid fa-signal"></i>
-                    Contact
-                </a>
+                        <a @click.prevent="smoothScroll('#projects'); showSmallDeviceLinks = false" class="n_item" style="--delay: 0.5s">
+                            <i class="fa-solid fa-cubes"></i>
+                            <name>Projects</name>
+                        </a>
 
-                <a @click.prevent="smoothScroll('#aboutApp')" class="n_item">
-                    <i class="fa-solid fa-puzzle-piece"></i>
-                    About App
-                </a>
+                        <a @click.prevent="smoothScroll('#contact'); showSmallDeviceLinks = false" class="n_item" style="--delay: 0.6s">
+                            <i class="fa-solid fa-signal"></i>
+                            <name>Contact</name>
+                        </a>
+
+                        <a @click.prevent="smoothScroll('#aboutApp'); showSmallDeviceLinks = false" class="n_item" style="--delay: 0.7s">
+                            <i class="fa-solid fa-puzzle-piece"></i>
+                            <name>About App</name>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="show-links border-shadows" @click="showSmallDeviceLinks = !showSmallDeviceLinks">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </nav>

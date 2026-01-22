@@ -1,10 +1,10 @@
-@use '../variables.scss' as *;
+@use "../variables.scss" as *;
 
 .knowledge {
-    padding: 100px 20px;
+    padding: 100px 0;
     overflow-x: hidden;
 
-    .banner{
+    .banner {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -20,12 +20,11 @@
             transform: translateX(30px);
             text-shadow: 0 4px 20px rgba(0, 153, 255, 0.3);
 
-            span{
+            span {
                 position: relative;
                 top: 10px;
                 color: $secondary-color;
                 font-size: 100px;
-                font-family: "Dancing Script", cursive;
                 filter: drop-shadow(0 0 10px rgba(0, 153, 255, 0.5));
             }
 
@@ -40,16 +39,20 @@
             height: auto;
             filter: drop-shadow(0 10px 30px rgba(0, 153, 255, 0.3));
 
-            &.backend-img{
+            &.backend-img {
                 max-width: 300px;
+            }
+
+            @media (max-width: 768px) {
+                display: none;
             }
         }
     }
 
-    .about{
+    .about {
         margin-bottom: 40px;
 
-        p{
+        p {
             text-align: justify;
             font-size: 18px;
             line-height: 1.8;
@@ -94,9 +97,12 @@
             justify-content: center;
             gap: 8px;
 
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+            background: linear-gradient(
+                135deg,
+                rgba(255, 255, 255, 0.05) 0%,
+                rgba(255, 255, 255, 0.02) 100%
+            );
             padding: 16px 8px;
-            border-radius: 16px;
             font-weight: 600;
             font-size: 18px;
             text-align: center;
@@ -116,7 +122,11 @@
             }
 
             &:hover {
-                background: linear-gradient(135deg, $secondary-color 0%, rgba(0, 153, 255, 0.8) 100%);
+                background: linear-gradient(
+                    135deg,
+                    $secondary-color 0%,
+                    rgba(0, 153, 255, 0.8) 100%
+                );
                 color: $primary-color;
                 transform: translateY(-8px) scale(1.05);
                 box-shadow: 0 12px 30px rgba(0, 153, 255, 0.5);
@@ -128,30 +138,5 @@
                 }
             }
         }
-    }
-}
-
-
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes animateImg{
-    0% {
-        transform: translate(-30px, 0px);
-    }
-    50% {
-        transform: translate(-30px, -11px) scale(1.1, 1.1) skew(-6deg, -4deg) rotateX(30deg);
-        opacity: 0.8;
-    }
-    100% {
-        transform: translate(-30px, 0px);
     }
 }

@@ -1,5 +1,5 @@
 <script setup>
-    import profileImage from '../../assets/me.jpeg';
+    import profileImage from '../../assets/me2.jpg';
 </script>
 
 <style lang="scss" scoped>
@@ -7,7 +7,7 @@
 </style>
 
 <template>
-    <section class="about-me" id="aboutMe">
+    <section class="about-me cover-black" id="aboutMe">
         <div class="container">
             <div class="about-me-header">
                 <h1 class="title">
