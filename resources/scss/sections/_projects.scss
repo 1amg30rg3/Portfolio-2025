@@ -1,0 +1,118 @@
+@use "../variables.scss" as *;
+
+.projects {
+    text-align: center;
+    padding: 100px 0;
+
+    .title {
+        font-size: 68px;
+        font-weight: 900;
+        margin-bottom: 20px;
+        position: relative;
+        display: inline-block;
+        color: $text-color;
+        letter-spacing: 2px;
+
+        span {
+            position: relative;
+            color: $secondary-color;
+            font-size: 100px;
+            font-family: "Dancing Script", cursive;
+        }
+
+        &::after {
+            content: "";
+            display: none;
+        }
+    }
+
+    .subtitle {
+        font-size: 20px;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 60px;
+        font-weight: 400;
+    }
+
+    .projects-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 40px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .project {
+        position: relative;
+        border: 1px solid rgba(0, 102, 170, 0.26);
+        overflow: hidden;
+        transition:
+            transform 0.5s ease,
+            box-shadow 0.5s ease,
+            border-color 0.3s ease;
+        background: rgba(255, 255, 255, 0.02);
+
+        .image-wrapper {
+            width: 100%;
+            height: auto;
+            position: relative;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: auto;
+                min-height: 250px;
+                display: block;
+                object-fit: cover;
+                transition:
+                    transform 0.6s ease,
+                    filter 0.3s ease;
+            }
+
+            .overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(
+                    135deg,
+                    rgba(0, 153, 255, 0.9) 0%,
+                    rgba(0, 0, 0, 0.85) 100%
+                );
+                color: #fff;
+                opacity: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                padding: 30px;
+                transition: opacity 0.4s ease;
+
+                h3 {
+                    font-size: 32px;
+                    font-weight: 800;
+                    margin-bottom: 15px;
+                    font-family: 'Zuume';
+                    letter-spacing: 1.5px;
+                }
+
+                p {
+                    font-size: 16px;
+                    line-height: 1.6;
+                }
+            }
+        }
+
+        &:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 50px rgba(0, 153, 255, 0.5);
+            border-color: $secondary-color;
+
+            .overlay {
+                animation: fadeUpSmooth 0.8s ease forwards;
+            }
+        }
+    }
+}

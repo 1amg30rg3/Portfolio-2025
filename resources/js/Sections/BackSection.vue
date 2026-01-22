@@ -3,13 +3,13 @@
 </style>
 
 <template>
-    <section class="knowledge knowledge--backend">
+    <section class="knowledge knowledge--backend" id="backend">
         <div class="container">
             <section class="banner">
                 <h1 class="title">
                     BACK<span>E</span>ND
                 </h1>
-                <img class="image" src="../../assets/designer.webp" alt="">
+                <img class="image backend-img" src="../../assets/backend.webp" alt="">
             </section>
 
             <hr>
@@ -19,17 +19,45 @@
             </section>
 
             <section class="skills">
-                <h2 class="skills-title">Skills</h2>
+                <h2 class="title">SKILLS</h2>
                 <div class="skills-list-wrapper">
                     <ul class="skills-list">
-                        <li class="skill">Laravel</li>
-                        <li class="skill">PHP</li>
-                        <li class="skill">MYSQL</li>
-                        <li class="skill">PHPunit</li>
-                        <li class="skill">Python</li>
-                        <li class="skill">Linux</li>
-                        <li class="skill">Crone Jobs</li>
-                        <li class="skill">Cybersecurity</li>
+                        <li class="skill">
+                            <i class="fa-brands fa-laravel"></i>
+                            Laravel
+                        </li>
+                        <li class="skill">
+                            <i class="fa-brands fa-php"></i>
+                            PHP
+                        </li>
+                        <li class="skill">
+                            <i class="fa-solid fa-database"></i>
+                            MYSQL
+                        </li>
+                        <li class="skill">
+                            <i class="fa-solid fa-database"></i>
+                            SQLite
+                        </li>
+                        <li class="skill">
+                            <i class="fa-solid fa-microscope"></i>
+                            Unit Testing
+                        </li>
+                        <li class="skill">
+                            <i class="fa-brands fa-python"></i>
+                            Python
+                        </li>
+                        <li class="skill">
+                            <i class="fa-brands fa-linux"></i>
+                            Linux
+                        </li>
+                        <li class="skill">
+                            <i class="fa-solid fa-tower-observation"></i>
+                            Crone Jobs
+                        </li>
+                        <li class="skill">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            Cybersecurity
+                        </li>
                     </ul>
                 </div>
             </section>
