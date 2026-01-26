@@ -1,5 +1,5 @@
 <style lang="scss" scoped>
-    @use "../../scss/sections/knowledge.scss" as *;
+@use "../../scss/sections/knowledge.scss" as *;
 </style>
 
 <template>
@@ -7,7 +7,8 @@
         <div class="container">
             <section class="banner">
                 <h1 class="title">
-                    BACK<span>E</span>ND
+                    BACK
+                    <span>END</span>
                 </h1>
                 <img class="image backend-img" src="../../assets/backend.webp" alt="">
             </section>
@@ -15,7 +16,9 @@
             <hr>
 
             <section class="about">
-                <p>I have extensive knowledge of Laravel, PHP, MySQL, Python, Linux, Crone jobs, and Cybersecurity. These skills allow me to develop robust and secure web applications that are scalable and efficient.</p>
+                <p>I have extensive knowledge of Laravel, PHP, MySQL, Python, Linux, Crone jobs, and Cybersecurity.
+                    These skills allow me to develop robust and secure web applications that are scalable and efficient.
+                </p>
             </section>
 
             <section class="skills">
@@ -64,4 +67,3 @@
         </div>
     </section>
 </template>
-

@@ -7,7 +7,8 @@
         <div class="container">
             <section class="banner">
                 <h1 class="title">
-                    FR<span>O</span>NTEND
+                    FRONT
+                    <span>END</span>
                 </h1>
                 <img class="image" src="../../assets/frontend.webp" alt="">
             </section>

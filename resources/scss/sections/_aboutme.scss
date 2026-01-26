@@ -15,37 +15,39 @@
         .title {
             position: relative;
             display: inline-block;
-            font-size: 68px;
+            font-size: $font-size-hero;
             font-weight: 900;
+            font-family: $font-heading;
             margin-bottom: 20px;
             text-shadow: 0 4px 20px rgba(0, 153, 255, 0.3);
 
             @media (max-width: 768px) {
-                font-size: 48px;
+                font-size: $font-size-hero-mobile;
             }
 
             span {
                 position: relative;
                 color: $secondary-color;
-                font-size: 100px;
-                font-family: "Dancing Script", cursive;
+                font-size: $font-size-hero-accent;
+                font-family: $font-accent;
                 filter: drop-shadow(0 0 10px rgba(0, 153, 255, 0.5));
 
                 @media (max-width: 768px) {
-                    font-size: 70px;
+                    font-size: $font-size-hero-accent-mobile;
                 }
             }
         }
 
         .subtitle {
-            font-size: 24px;
+            font-size: $font-size-subtitle;
+            font-family: $font-primary;
             color: $secondary-color;
             font-weight: 600;
             margin-top: 10px;
             opacity: 0.9;
 
             @media (max-width: 768px) {
-                font-size: 18px;
+                font-size: $font-size-subtitle-mobile;
             }
         }
     }
@@ -61,7 +63,7 @@
             grid-template-columns: 1fr;
             gap: 40px;
 
-            .profile-image-wrapper{
+            .profile-image-wrapper {
                 margin: 45px 0;
             }
         }
@@ -268,16 +270,16 @@
                     margin-bottom: 25px;
                     margin-top: 15px;
                     color: $text-color;
-                    font-family: 'Zuume';
-                    letter-spacing: .5px;
+                    font-family: "Zuume";
+                    letter-spacing: 0.5px;
                 }
 
                 .card-subtitle {
                     font-size: 20px;
                     color: $secondary-color;
                     margin-bottom: 15px;
-                    font-family: 'Zuume';
-                    letter-spacing: .5px;
+                    font-family: "Zuume";
+                    letter-spacing: 0.5px;
                 }
 
                 .card-description {
