@@ -13,7 +13,7 @@
                 <h1 class="title">
                     AB<span>O</span>UT ME
                 </h1>
-                <p class="subtitle">Full-Stack Developer | Educator | Tech Enthusiast</p>
+                <p class="subtitle">Software Engineer</p>
             </div>
 
             <div class="about-me-content">

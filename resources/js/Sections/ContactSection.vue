@@ -1,4 +1,23 @@
 <script setup>
+import { ref } from 'vue';
+
+const emailCopied = ref(false);
+
+const copyEmail = () => {
+    const email = 'g.gavash3li@gmail.com';
+    navigator.clipboard.writeText(email).then(() => {
+        emailCopied.value = true;
+        setTimeout(() => {
+            emailCopied.value = false;
+        }, 2000);
+    });
+};
+
+const openLocation = () => {
+    const location = 'Tbilisi, Georgia';
+    const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`;
+    window.open(mapsUrl, '_blank', 'noopener,noreferrer');
+};
 </script>
 
 <style lang="scss" scoped>
@@ -17,20 +36,23 @@
                 <div class="contact-info">
                     <h2>Get In Touch</h2>
 
-                    <div class="info-item">
+                    <div class="info-item email-item" @click="copyEmail">
                         <i class="fa-solid fa-envelope icon"></i>
                         <div class="info-content">
                             <div class="label">Email</div>
                             <div class="value">g.gavash3li@gmail.com</div>
                         </div>
+                        <i class="fa-solid fa-copy copy-icon" :class="{ copied: emailCopied }"></i>
+                        <span class="copy-tooltip" v-if="emailCopied">Copied!</span>
                     </div>
 
-                    <div class="info-item">
+                    <div class="info-item location-item" @click="openLocation">
                         <i class="fa-solid fa-location-dot icon"></i>
                         <div class="info-content">
                             <div class="label">Location</div>
                             <div class="value">Tbilisi, Georgia</div>
                         </div>
+                        <i class="fa-solid fa-external-link-alt link-icon"></i>
                     </div>
 
                     <div class="social-links">

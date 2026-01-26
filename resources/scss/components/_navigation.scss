@@ -1,21 +1,21 @@
-@use '../variables.scss' as *;
-@use '../animations.scss' as *;
-@use '../base.scss' as *;
+@use "../variables.scss" as *;
+@use "../animations.scss" as *;
+@use "../base.scss" as *;
 
 $separator-color: rgba(0, 153, 255, 0.07);
 
 .navigation {
     position: fixed;
     top: 5px;
-    width: 100% ;
+    width: 100%;
     left: 50%;
     transform: translateX(-50%);
     color: $text-color;
     z-index: 110;
-    font-family: 'Zuume';
+    font-family: "Zuume";
     letter-spacing: 1.5px;
 
-    .show-links{
+    .show-links {
         display: none;
     }
 
@@ -23,7 +23,7 @@ $separator-color: rgba(0, 153, 255, 0.07);
         top: auto;
         bottom: 5px;
 
-        .show-links{
+        .show-links {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             gap: 4px;
@@ -33,15 +33,15 @@ $separator-color: rgba(0, 153, 255, 0.07);
             transition: all 0.1s ease;
             padding: 5px;
 
-            span{
+            span {
                 display: block;
                 background-color: $text-color;
                 transition: all 0.1s ease;
             }
 
-            &:hover{
+            &:hover {
                 gap: 6px;
-                span{
+                span {
                     background-color: $secondary-color;
                 }
             }
@@ -49,7 +49,7 @@ $separator-color: rgba(0, 153, 255, 0.07);
     }
 
     .nav-items,
-    .nav-section{
+    .nav-section {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -87,7 +87,7 @@ $separator-color: rgba(0, 153, 255, 0.07);
         }
     }
 
-    .logo-section{
+    .logo-section {
         overflow: hidden;
 
         .logo {
@@ -104,7 +104,7 @@ $separator-color: rgba(0, 153, 255, 0.07);
         height: 40px;
 
         &::after {
-            content: '';
+            content: "";
             position: absolute;
             top: 0;
             left: 50%;
@@ -117,19 +117,21 @@ $separator-color: rgba(0, 153, 255, 0.07);
     }
 }
 
-.border-shadows{
+.border-shadows {
     background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(0, 102, 170, 0.4);
-    box-shadow: rgba(0, 0, 0, 0.5) 0px 4px 12px 0px,
-                rgba(0, 153, 255, 0.1) 0px 0px 20px 0px;
+    box-shadow:
+        rgba(0, 0, 0, 0.5) 0px 4px 12px 0px,
+        rgba(0, 153, 255, 0.1) 0px 0px 20px 0px;
     transition: all 0.3s ease;
 
     &:hover {
         border-color: rgba(0, 153, 255, 0.6);
-        box-shadow: rgba(0, 0, 0, 0.6) 0px 6px 16px 0px,
-                    rgba(0, 153, 255, 0.15) 0px 0px 25px 0px;
+        box-shadow:
+            rgba(0, 0, 0, 0.6) 0px 6px 16px 0px,
+            rgba(0, 153, 255, 0.15) 0px 0px 25px 0px;
     }
 }
 
@@ -143,26 +145,31 @@ $separator-color: rgba(0, 153, 255, 0.07);
     @extend .cover-black;
     color: green;
     z-index: 150;
+    overflow: scroll;
 
-    .nav-items{
+    @media (max-width: 500px), (max-height: 500px) {
+        padding: 10px 0;
+    }
+
+    .nav-items {
         all: unset;
         width: 100%;
 
-        .header{
+        .header {
             display: flex;
             align-items: center;
             justify-content: space-between;
             width: 100%;
 
-            .logo-section{
+            .logo-section {
                 all: unset;
-                .logo{
+                .logo {
                     height: 60px;
                 }
             }
         }
 
-        .links{
+        .links {
             all: unset;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -171,11 +178,15 @@ $separator-color: rgba(0, 153, 255, 0.07);
             justify-content: center;
             margin-top: 50px;
 
-            a{
+            @media (max-width: 400px) {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            }
+
+            a {
                 display: flex;
                 height: 150px;
 
-                @media (max-width: 369px) {
+                @media (max-width: 400px) {
                     height: 100px;
                 }
 
@@ -185,13 +196,14 @@ $separator-color: rgba(0, 153, 255, 0.07);
 
                 @extend .border-shadows;
 
-                animation: fadeUpSmooth 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+                animation: fadeUpSmooth 0.7s cubic-bezier(0.22, 1, 0.36, 1)
+                    forwards;
                 animation-delay: var(--delay);
             }
         }
     }
 
-    .show-links{
+    .show-links {
         display: none;
     }
 
