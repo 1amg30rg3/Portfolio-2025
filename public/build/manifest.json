@@ -1,0 +1,88 @@
+{
+  "resources/assets/CRM.jpg": {
+    "file": "assets/CRM-CDOXswYk.jpg",
+    "src": "resources/assets/CRM.jpg"
+  },
+  "resources/assets/Giorgi_Gavasheli_CV.pdf": {
+    "file": "assets/Giorgi_Gavasheli_CV-oWuXT4B_.pdf",
+    "src": "resources/assets/Giorgi_Gavasheli_CV.pdf"
+  },
+  "resources/assets/backend.webp": {
+    "file": "assets/backend-DLCE3BRb.webp",
+    "src": "resources/assets/backend.webp"
+  },
+  "resources/assets/cmg.png": {
+    "file": "assets/cmg-JFXwqlNH.png",
+    "src": "resources/assets/cmg.png"
+  },
+  "resources/assets/drive.png": {
+    "file": "assets/drive-Bq8CrhKT.png",
+    "src": "resources/assets/drive.png"
+  },
+  "resources/assets/fonts/zuume-bold.woff": {
+    "file": "assets/zuume-bold-C4UDnKHT.woff",
+    "src": "resources/assets/fonts/zuume-bold.woff"
+  },
+  "resources/assets/fonts/zuume-medium.woff": {
+    "file": "assets/zuume-medium-XTYYJNG6.woff",
+    "src": "resources/assets/fonts/zuume-medium.woff"
+  },
+  "resources/assets/fonts/zuume-semi-bold.woff": {
+    "file": "assets/zuume-semi-bold-B_T3yFX1.woff",
+    "src": "resources/assets/fonts/zuume-semi-bold.woff"
+  },
+  "resources/assets/frontend.webp": {
+    "file": "assets/frontend-CwzsDT1a.webp",
+    "src": "resources/assets/frontend.webp"
+  },
+  "resources/assets/me.jpeg": {
+    "file": "assets/me-DW9IwA9z.jpeg",
+    "src": "resources/assets/me.jpeg"
+  },
+  "resources/assets/me2.jpg": {
+    "file": "assets/me2-BqoNJn_K.jpg",
+    "src": "resources/assets/me2.jpg"
+  },
+  "resources/assets/safe.png": {
+    "file": "assets/safe-Bl_06JCe.png",
+    "src": "resources/assets/safe.png"
+  },
+  "resources/assets/stratifySolutions.png": {
+    "file": "assets/stratifySolutions-mp68yZwo.png",
+    "src": "resources/assets/stratifySolutions.png"
+  },
+  "resources/assets/webSavvys.png": {
+    "file": "assets/webSavvys-Bg6HHnTP.png",
+    "src": "resources/assets/webSavvys.png"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-BJYrwD5p.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "css": [
+      "assets/app-D2WNn0LW.css"
+    ],
+    "assets": [
+      "assets/me-DW9IwA9z.jpeg",
+      "assets/Giorgi_Gavasheli_CV-oWuXT4B_.pdf",
+      "assets/frontend-CwzsDT1a.webp",
+      "assets/backend-DLCE3BRb.webp",
+      "assets/me2-BqoNJn_K.jpg",
+      "assets/CRM-CDOXswYk.jpg",
+      "assets/stratifySolutions-mp68yZwo.png",
+      "assets/webSavvys-Bg6HHnTP.png",
+      "assets/cmg-JFXwqlNH.png",
+      "assets/drive-Bq8CrhKT.png",
+      "assets/safe-Bl_06JCe.png"
+    ]
+  },
+  "resources/scss/app.scss": {
+    "file": "assets/app-o_wCnlLi.css",
+    "src": "resources/scss/app.scss",
+    "isEntry": true,
+    "names": [
+      "app.css"
+    ]
+  }
+}
