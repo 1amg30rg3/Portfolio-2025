@@ -56,12 +56,12 @@
     "src": "resources/assets/webSavvys.png"
   },
   "resources/js/app.js": {
-    "file": "assets/app-DVpfQ3kX.js",
+    "file": "assets/app-DYn0TC77.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "css": [
-      "assets/app-C2nmugLG.css"
+      "assets/app-DGImePXo.css"
     ],
     "assets": [
       "assets/me-DW9IwA9z.jpeg",
