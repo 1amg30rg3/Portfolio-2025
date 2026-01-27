@@ -1,22 +1,40 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, inject } from 'vue';
+import { useForm } from '@inertiajs/vue3';
+import ButtonComponent from '../Components/ButtonComponent.vue';
 
+const toast = inject('toast');
 const emailCopied = ref(false);
+
+const form = useForm({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+});
+
+const submitForm = () => {
+    form.post('/contact', {
+        preserveScroll: true,
+        onSuccess: () => {
+            form.reset();
+            toast.success("Message sent successfully! I'll get back to you soon.");
+        },
+        onError: () => {
+            toast.error('Failed to send message. Please try again.');
+        }
+    });
+};
 
 const copyEmail = () => {
     const email = 'g.gavash3li@gmail.com';
     navigator.clipboard.writeText(email).then(() => {
         emailCopied.value = true;
+        toast.success('Email copied to clipboard!');
         setTimeout(() => {
             emailCopied.value = false;
         }, 2000);
     });
-};
-
-const openLocation = () => {
-    const location = 'Tbilisi, Georgia';
-    const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`;
-    window.open(mapsUrl, '_blank', 'noopener,noreferrer');
 };
 </script>
 
@@ -68,30 +86,55 @@ const openLocation = () => {
 
                 <div class="contact-form">
                     <h2>Send Message</h2>
-                    <form>
+                    <form @submit.prevent="submitForm">
                         <div class="form-group">
                             <label for="name">Your Name</label>
-                            <input type="text" id="name" placeholder="John Doe" />
+                            <input
+                                type="text"
+                                id="name"
+                                v-model="form.name"
+                                placeholder="John Doe"
+                                required
+                            />
+                            <span v-if="form.errors.name" class="error">{{ form.errors.name }}</span>
                         </div>
 
                         <div class="form-group">
                             <label for="email">Your Email</label>
-                            <input type="email" id="email" placeholder="john@example.com" />
+                            <input
+                                type="email"
+                                id="email"
+                                v-model="form.email"
+                                placeholder="john@example.com"
+                                required
+                            />
+                            <span v-if="form.errors.email" class="error">{{ form.errors.email }}</span>
                         </div>
 
                         <div class="form-group">
                             <label for="subject">Subject</label>
-                            <input type="text" id="subject" placeholder="Project Inquiry" />
+                            <input
+                                type="text"
+                                id="subject"
+                                v-model="form.subject"
+                                placeholder="Project Inquiry"
+                                required
+                            />
+                            <span v-if="form.errors.subject" class="error">{{ form.errors.subject }}</span>
                         </div>
 
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message" placeholder="Tell me about your project..."></textarea>
+                            <textarea
+                                id="message"
+                                v-model="form.message"
+                                placeholder="Tell me about your project..."
+                                required
+                            ></textarea>
+                            <span v-if="form.errors.message" class="error">{{ form.errors.message }}</span>
                         </div>
 
-                        <button type="submit" class="submit-btn">
-                            <i class="fa-solid fa-paper-plane"></i> Send Message
-                        </button>
+                        <ButtonComponent label="Send Message" :processing="form.processing" icon="envelope"/>
                     </form>
                 </div>
             </div>

@@ -1,7 +1,6 @@
 @use "../variables.scss" as *;
 
-button,
-.myBT {
+.my-button {
     position: relative;
     padding: 10px 18px;
     font-weight: 700;
@@ -22,6 +21,10 @@ button,
         background-color: $secondary-color;
         z-index: -1;
         transition: right 0.2s ease-in-out;
+
+        &.processing {
+            right: 0;
+        }
     }
 
     &:hover {
@@ -34,10 +37,34 @@ button,
         outline: none;
     }
 
-    svg {
+    i {
         position: relative;
         left: 5px;
         width: 15px;
         fill: $text-color;
     }
+}
+
+.spinner {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: $text-color;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+button:disabled,
+.myBT:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
 }

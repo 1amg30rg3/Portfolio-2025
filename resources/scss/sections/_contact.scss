@@ -1,12 +1,6 @@
 @use "../../scss/variables.scss" as *;
 
 .contact-section {
-    @media (max-width: 968px) {
-        overflow-x: hidden;
-        overflow-y: auto;
-        max-height: calc(100vh - 80px);
-    }
-
     .section-header {
         text-align: center;
         margin-bottom: 60px;
@@ -318,47 +312,11 @@
             }
         }
 
-        .submit-btn {
-            width: 100%;
-            padding: 15px 30px;
-            background: linear-gradient(
-                135deg,
-                $secondary-color 0%,
-                rgba(0, 153, 255, 0.8) 100%
-            );
-            border: none;
-            color: $text-color;
-            font-size: 18px;
-            font-weight: 700;
-            font-family: "Montserrat", sans-serif;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-
-            @media (max-width: 768px) {
-                padding: 12px 25px;
-                font-size: 16px;
-            }
-
-            i {
-                margin-right: 10px;
-            }
-
-            &:hover {
-                background: linear-gradient(
-                    135deg,
-                    rgba(0, 153, 255, 0.9) 0%,
-                    $secondary-color 100%
-                );
-                box-shadow: 0 10px 30px rgba(0, 153, 255, 0.4);
-                transform: translateY(-2px);
-            }
-
-            &:active {
-                transform: translateY(0);
-            }
+        button {
+            display: block;
+            margin: 0 auto
         }
+
     }
 }
 

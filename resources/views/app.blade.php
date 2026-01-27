@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- Primary Meta Tags -->
-    <title>George Gavasheli - Software Engineer | Full Stack Developer</title>
-    <meta name="title" content="George Gavasheli - Software Engineer | Full Stack Developer">
-    <meta name="description" content="Experienced Software Engineer specializing in Laravel, Vue.js, and modern web development. Building scalable, secure, and user-friendly applications in Tbilisi, Georgia.">
+    <title>George Gavasheli - Full Stack Developer</title>
+    <meta name="title" content="George Gavasheli - Full Stack Developer">
+    <meta name="description" content="Full Stack Developer specializing in Laravel, Vue.js, and modern web development. Building scalable applications in Tbilisi, Georgia.">
     <meta name="keywords" content="George Gavasheli, Software Engineer, Full Stack Developer, Laravel, Vue.js, Inertia.js, PHP, JavaScript, Web Development, Tbilisi, Georgia">
     <meta name="author" content="George Gavasheli">
     <meta name="robots" content="index, follow">
@@ -18,21 +18,24 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
-    <meta property="og:title" content="George Gavasheli - Software Engineer | Full Stack Developer">
-    <meta property="og:description" content="Experienced Software Engineer specializing in Laravel, Vue.js, and modern web development. Building scalable, secure, and user-friendly applications.">
+    <meta property="og:title" content="George Gavasheli - Full Stack Developer">
+    <meta property="og:description" content="Full Stack Developer specializing in Laravel, Vue.js, and modern web development. Building scalable, secure applications in Tbilisi, Georgia.">
     <meta property="og:image" content="{{ asset('images/og-image.jpg') }}">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:site_name" content="George Gavasheli Portfolio">
+    <meta property="og:image:alt" content="George Gavasheli - Full Stack Developer Portfolio">
+    <meta property="og:site_name" content="George Gavasheli">
     <meta property="og:locale" content="en_US">
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="{{ url()->current() }}">
-    <meta property="twitter:title" content="George Gavasheli - Software Engineer | Full Stack Developer">
-    <meta property="twitter:description" content="Experienced Software Engineer specializing in Laravel, Vue.js, and modern web development. Building scalable, secure, and user-friendly applications.">
-    <meta property="twitter:image" content="{{ asset('images/og-image.jpg') }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ url()->current() }}">
+    <meta name="twitter:title" content="George Gavasheli - Full Stack Developer">
+    <meta name="twitter:description" content="Full Stack Developer specializing in Laravel, Vue.js, and modern web development. Building scalable, secure applications in Tbilisi, Georgia.">
+    <meta name="twitter:image" content="{{ asset('images/og-image.jpg') }}">
+    <meta name="twitter:image:alt" content="George Gavasheli - Full Stack Developer Portfolio">
     <meta name="twitter:creator" content="@giorgigavasheli">
+    <meta name="twitter:site" content="@giorgigavasheli">
 
     <!-- Additional Meta Tags -->
     <meta name="theme-color" content="#0099ff">
@@ -44,8 +47,8 @@
     <link rel="canonical" href="{{ url()->current() }}">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="{{ asset('images/logo.svg') }}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/logo.svg') }}">
+    <link rel="icon" type="image/svg+xml" href="{{ asset('images/logo.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/logo.png') }}">
 
     <!-- Preconnect for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
