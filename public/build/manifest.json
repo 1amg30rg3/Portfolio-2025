@@ -56,12 +56,12 @@
     "src": "resources/assets/webSavvys.png"
   },
   "resources/js/app.js": {
-    "file": "assets/app-C7fN7pRe.js",
+    "file": "assets/app-DVpfQ3kX.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "css": [
-      "assets/app-BlJLx0jQ.css"
+      "assets/app-C2nmugLG.css"
     ],
     "assets": [
       "assets/me-DW9IwA9z.jpeg",
@@ -78,9 +78,10 @@
     ]
   },
   "resources/scss/app.scss": {
-    "file": "assets/app-CeKdN3hp.css",
+    "file": "assets/app-CwfemSXO.css",
     "src": "resources/scss/app.scss",
     "isEntry": true,
+    "name": "app",
     "names": [
       "app.css"
     ]
