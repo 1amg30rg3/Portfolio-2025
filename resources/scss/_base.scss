@@ -22,6 +22,7 @@ body {
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    position: relative;
 }
 
 .circle {
@@ -31,7 +32,17 @@ body {
     border-radius: 50%;
     background-color: $secondary-color;
     animation: float linear infinite;
+    z-index: 0;
+}
+
+.circle-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
     z-index: -1;
+    overflow: hidden;
 }
 
 .title {
